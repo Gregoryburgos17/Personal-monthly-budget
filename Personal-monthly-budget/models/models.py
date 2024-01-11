@@ -7,10 +7,10 @@ class Personal_monthly_budget(models.Model):
     _name = 'Personal_monthly_budget.Personal_monthly_budget'
     _description = 'Modelo principal'
 
-    name = fields.Char()
-    value = fields.Integer()
-    value2 = fields.Float(compute="_value_pc", store=True)
-    description = fields.Text()
+    Descripcion = fields.Char(string='Descripcion')
+    Monto = fields.Monetary() 
+    Fecha = fields.Datetime()
+    Categoria = fields.Text()
 
     @api.depends('value')
     def _value_pc(self):
