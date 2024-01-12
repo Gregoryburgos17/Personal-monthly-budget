@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields
 
+class Category(models.Model):
+    _name = 'personal_monthly_budget.categorias'
+    _description = 'categorias'
 
-class Personal_monthly_budget(models.Model):
-    _name = 'Personal_monthly_budget.Personal_monthly_budget'
-    _description = 'Modelo principal'
+    name = fields.Char(string='Nombre de Categoria')
+class Finanza(models.Model):
+    _name = 'personal_monthly_budget.finanza'
+    _description = 'Seguimiento Ingresos y Egresos'
 
-    Descripcion = fields.Char(string='Descripcion')
-    Monto = fields.Monetary() 
+    Descripcion = fields.Char(string='Descripcion', required=True)
+    Monto = fields.Integer(string='Monto', required=True)
     Fecha = fields.Datetime()
-    Categoria = fields.Text()
-
-    @api.depends('value')
-    def _value_pc(self):
-        for record in self:
-            record.value2 = float(record.value) / 100
+    Categoria = fields.Many2one('personal_monthly_budget.categorias', string = 'Categoria')
+    tipo = fields.Selection([('ingreso', 'Ingreso'), ('egreso', 'Egreso')], string='tipo', default='ingreso')

@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_developer_test_developer_test,developer_test.developer_test,model_developer_test_developer_test,base.group_user,1,1,1,1
+access_finanza_user,Finanza User,model_personal_monthly_budget_finanza,base.group_user,1,1,1,1
+access_categorias_user,Categorias User,model_personal_monthly_budget_categorias,base.group_user,1,1,1,1
