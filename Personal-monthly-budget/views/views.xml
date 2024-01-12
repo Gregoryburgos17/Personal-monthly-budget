@@ -75,7 +75,7 @@
     </record>
 -->
     <!-- Top menu item -->
-    <menuitem name="Personal Monthly Budget" id="menu_ingresos_egresos" sequence="10"/>
+    <menuitem name="Monthly Budget" id="menu_ingresos_egresos" sequence="10"/>
 
     <!-- menu categories -->
     <menuitem name="Ingresos" id="menu_ingresos" parent="menu_ingresos_egresos" action="action_ingresos" sequence="10"/>
