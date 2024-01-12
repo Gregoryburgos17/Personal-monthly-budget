@@ -2,6 +2,12 @@
   <data>
   
     <!-- explicit list view definition -->
+    <record id="action_dashboard" model="ir.actions.act_window">
+      <field name="name">Dashboard</field>
+      <field name="res_model">personal_monthly_budget.finanza</field>
+      <field name="view_mode">pivot</field>
+    </record>
+
     <record id="action_ingresos" model="ir.actions.act_window">
       <field name="name">Ingresos</field>
       <field name="res_model">personal_monthly_budget.finanza</field>
@@ -78,6 +84,7 @@
     <menuitem name="Monthly Budget" id="menu_ingresos_egresos" sequence="10"/>
 
     <!-- menu categories -->
+    <menuitem name="Dashboard" id="menu_dashboard" parent="menu_ingresos_egresos" action="action_dashboard" sequence="10"/>
     <menuitem name="Ingresos" id="menu_ingresos" parent="menu_ingresos_egresos" action="action_ingresos" sequence="10"/>
     <menuitem name="Egresos" id="menu_egresos" parent="menu_ingresos_egresos" action="action_egresos" sequence="10"/>
     <menuitem name="Categorias" id="menu_categorias" parent="menu_ingresos_egresos" action="action_categorias" sequence="10"/>
