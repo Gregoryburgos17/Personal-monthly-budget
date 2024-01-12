@@ -65,35 +65,15 @@
             <pivot>
                 <field name="Fecha" type="row" interval="month"/>
                 <field name="Categoria" type="col"/>
-                <field name="display_monto"/>
+                <field name="display_monto" type="measure"/>
             </pivot>
         </field>
     </record>
     <!-- actions opening views on models -->
-<!-- 
-    <record model="ir.actions.act_window" id="Personal_monthly_budget.action_window">
-      <field name="name">Personal_monthly_budget window</field>
-      <field name="res_model">Personal_monthly_budget.Personal_monthly_budget</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
+
     <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="Personal_monthly_budget.action_server">
-      <field name="name">Personal_monthly_budget server</field>
-      <field name="model_id" ref="model_Personal_monthly_budget_Personal_monthly_budget"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
     <!-- Top menu item -->
-    <menuitem name="Monthly Budget" id="menu_ingresos_egresos" web_icon="personal_monthly_budget,static/description/icon.svg" sequence="10"/>
+    <menuitem name="Monthly Budget" id="menu_ingresos_egresos" web_icon="personal_monthly_budget,static/description/icon.png" sequence="10"/>
 
     <!-- menu categories -->
     <menuitem name="Dashboard" id="menu_dashboard" parent="menu_ingresos_egresos" action="action_dashboard" sequence="1"/>

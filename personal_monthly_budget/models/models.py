@@ -18,8 +18,9 @@ class Finanza(models.Model):
     tipo = fields.Selection([('ingreso', 'Ingreso'), ('egreso', 'Egreso')], string='tipo', default='Ingreso')
     display_monto = fields.Float(string='Monto', compute='_compute_display_monto', store=True, invisible=True)
 
-@api.depends('Monto', 'tipo')
-def _compute_display_monto(self):
-    for record in self:
-        # If tipo is 'egreso', make Monto negative; otherwise, keep it as is
-        record.display_monto = -record.Monto if record.tipo == 'Egreso' else record.Monto
+    @api.depends('Monto', 'tipo')
+    def _compute_display_monto(self):
+        for record in self:
+            # If tipo is 'egreso', make Monto negative; otherwise, keep it as is
+            record.display_monto = -record.Monto if record.tipo == 'egreso' or record.tipo == 'Egreso' else record.Monto
+
