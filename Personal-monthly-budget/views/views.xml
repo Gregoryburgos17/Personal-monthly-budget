@@ -40,23 +40,33 @@
       </field>
     </record>
     <record id="finanza_view_form" model="ir.ui.view">
-          <field name="name">finanza.form</field>
-          <field name="model">personal_monthly_budget.finanza</field>
-          <field name="arch" type="xml">
-            <form string="Tags">
-                <sheet>
-                    <group>
-                        <field name="Descripcion"/>
-                        <field name="Monto"/>
-                        <field name="Fecha"/>
-                        <field name="Categoria"/>
-                        <field name="tipo" widget="radio"/>
-                    </group>
-                </sheet>
-            </form>
-          </field>
-      </record>
-
+        <field name="name">finanza.form</field>
+        <field name="model">personal_monthly_budget.finanza</field>
+        <field name="arch" type="xml">
+          <form string="Tags">
+              <sheet>
+                  <group>
+                      <field name="Descripcion"/>
+                      <field name="Monto"/>
+                      <field name="Fecha"/>
+                      <field name="Categoria"/>
+                      <field name="tipo" widget="radio"/>
+                  </group>
+              </sheet>
+          </form>
+        </field>
+    </record>
+    <record id="view_dashboard_pivot" model="ir.ui.view">
+        <field name="name">Dashboard</field>
+        <field name="model">personal_monthly_budget.finanza</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="Fecha" type="row" interval="month"/>
+                <field name="Categoria" type="col"/>
+                <field name="display_monto"/>
+            </pivot>
+        </field>
+    </record>
     <!-- actions opening views on models -->
 <!-- 
     <record model="ir.actions.act_window" id="Personal_monthly_budget.action_window">
@@ -84,10 +94,10 @@
     <menuitem name="Monthly Budget" id="menu_ingresos_egresos" sequence="10"/>
 
     <!-- menu categories -->
-    <menuitem name="Dashboard" id="menu_dashboard" parent="menu_ingresos_egresos" action="action_dashboard" sequence="10"/>
-    <menuitem name="Ingresos" id="menu_ingresos" parent="menu_ingresos_egresos" action="action_ingresos" sequence="10"/>
-    <menuitem name="Egresos" id="menu_egresos" parent="menu_ingresos_egresos" action="action_egresos" sequence="10"/>
-    <menuitem name="Categorias" id="menu_categorias" parent="menu_ingresos_egresos" action="action_categorias" sequence="10"/>
+    <menuitem name="Dashboard" id="menu_dashboard" parent="menu_ingresos_egresos" action="action_dashboard" sequence="1"/>
+    <menuitem name="Ingresos" id="menu_ingresos" parent="menu_ingresos_egresos" action="action_ingresos" sequence="2"/>
+    <menuitem name="Egresos" id="menu_egresos" parent="menu_ingresos_egresos" action="action_egresos" sequence="3"/>
+    <menuitem name="Categorias" id="menu_categorias" parent="menu_ingresos_egresos" action="action_categorias" sequence="4"/>
 
     <!-- actions -->
 
