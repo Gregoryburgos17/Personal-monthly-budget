@@ -29,7 +29,7 @@
           <field name="Monto"/>
           <field name="Fecha"/>
           <field name="Categoria"/>
-          <field name="tipo" widget="radio"/>
+          <field name="tipo"/>
         </tree>
       </field>
     </record>
