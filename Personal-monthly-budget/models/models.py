@@ -22,4 +22,4 @@ class Finanza(models.Model):
 def _compute_display_monto(self):
     for record in self:
         # If tipo is 'egreso', make Monto negative; otherwise, keep it as is
-        record.display_monto = -record.Monto if record.tipo == 'egreso' else record.Monto
+        record.display_monto = -record.Monto if record.tipo == 'Egreso' else record.Monto

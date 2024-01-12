@@ -12,12 +12,14 @@
       <field name="name">Ingresos</field>
       <field name="res_model">personal_monthly_budget.finanza</field>
       <field name="view_mode">tree,form,pivot</field>
+      <field name="domain">[('tipo', '=', 'ingreso')]</field>
     </record>
 
     <record id="action_egresos" model="ir.actions.act_window">
       <field name="name">Egresos</field>
       <field name="res_model">personal_monthly_budget.finanza</field>
       <field name="view_mode">tree,form,pivot</field>
+      <field name="domain">[('tipo', '=', 'egreso')]</field>
     </record>
 
     <record id="action_categorias" model="ir.actions.act_window">
@@ -91,7 +93,7 @@
     </record>
 -->
     <!-- Top menu item -->
-    <menuitem name="Monthly Budget" id="menu_ingresos_egresos" sequence="10"/>
+    <menuitem name="Monthly Budget" id="menu_ingresos_egresos" web_icon="personal_monthly_budget,static/description/icon.svg" sequence="10"/>
 
     <!-- menu categories -->
     <menuitem name="Dashboard" id="menu_dashboard" parent="menu_ingresos_egresos" action="action_dashboard" sequence="1"/>
